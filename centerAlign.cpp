@@ -2,20 +2,23 @@
 #include <string>
 #include <vector>
 
-#include "centerAlign.h"
-
 typedef std::string::size_type string_size;
-typedef std::vector<std::string>::size_type vec_size;
 
-string_size width(const std::vector<std::string>& vec){
+template <class T>
+string_size width(const T& vec){
+    typedef typename T::size_type vec_size;
+
     string_size maxLen = 0;
     for(vec_size i = 0; i < vec.size(); ++i)
         maxLen = std::max(maxLen, vec[i].size());
     return maxLen;
 }
 
-std::vector<std::string> centerAlign(const std::vector<std::string>& vec){
-    std::vector<std::string> ret;
+template <class T>
+T centerAlign(const T& vec){
+    typedef typename T::size_type vec_size;
+
+    T ret;
     string_size maxLen = width(vec);
 
     // top border

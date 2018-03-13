@@ -4,9 +4,13 @@
 #include <string>
 #include <vector>
 
-std::string::size_type width(const std::vector<std::string>&);
+#include "centerAlign.cpp"
 
-std::vector<std::string> centerAlign(const std::vector<std::string>&);
+template <class T>
+std::string::size_type width(const T&);
+
+template <class T>
+T centerAlign(const T&);
 
 #endif // GUARD_centerAlign_h
 
