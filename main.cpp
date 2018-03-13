@@ -3,22 +3,22 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include "Vec.h"
 
 #include "centerAlign.h"
 
-typedef std::vector<std::string>::size_type vec_size;
+typedef Vec<std::string>::size_type vec_size;
 
 int main() {
 
     // receive original picture from user and store in vector
     std::string s;
-    std::vector<std::string> input;
+    Vec<std::string> input;
     while(getline(std::cin, s))
         input.push_back(s);
 
     // copy returned vector of centered and framed text into new vector
-    std::vector<std::string> centered_text = centerAlign(input);
+    Vec<std::string> centered_text = centerAlign(input);
 
     // print centered, framed text
     for (vec_size i = 0; i != centered_text.size(); ++i){
