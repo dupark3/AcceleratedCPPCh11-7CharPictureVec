@@ -7,9 +7,6 @@
 #include "centerAlign.cpp"
 
 template <class T>
-std::string::size_type width(const T&);
-
-template <class T>
 T centerAlign(const T&);
 
 #endif // GUARD_centerAlign_h
