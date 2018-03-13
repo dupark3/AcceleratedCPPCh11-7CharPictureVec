@@ -6,11 +6,13 @@
 #include "Vec.h"
 
 #include "centerAlign.h"
+#include "hcat.h"
 
 typedef Vec<std::string>::size_type vec_size;
 
 int main() {
 
+// FRAME AND CENTER ALIGN
     // receive original picture from user and store in vector
     std::string s;
     Vec<std::string> input;
@@ -24,6 +26,34 @@ int main() {
     for (vec_size i = 0; i != centered_text.size(); ++i){
         std::cout << centered_text[i] << std::endl;
     }
+
+
+
+// HORIZONTALLY CONCATENATE
+    // store first picture into vec
+    std::cout << "Input first picture: " << std::endl;
+    std::string s;
+    Vec<std::string> firstPicture;
+    while(getline(std::cin, s))
+        firstPicture.push_back(s);
+
+    // reset error state of console input stream
+    std::cin.clear();
+
+    // store second picture into vector
+    std::cout << "Input second picture: " << std::endl;
+    Vec<std::string> secondPicture;
+    while(getline(std::cin, s))
+        secondPicture.push_back(s);
+
+    std::cout<<"done with inputs"<<std::endl;
+    // horizontally concatenate two pictures
+    Vec<std::string> finalPicture = hcat(firstPicture, secondPicture);
+    std::cout<<"done with horizontal concact"<<std::endl;
+    for (vec_size i = 0; i != finalPicture.size(); ++i){
+        std::cout << finalPicture[i] << std::endl;
+    }
+
 
     return 0;
 }
