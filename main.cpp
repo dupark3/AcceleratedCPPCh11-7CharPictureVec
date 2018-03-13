@@ -18,6 +18,7 @@ int main() {
     Vec<std::string> input;
     while(getline(std::cin, s))
         input.push_back(s);
+    std::cin.clear();
 
     // copy returned vector of centered and framed text into new vector
     Vec<std::string> centered_text = centerAlign(input);
@@ -31,8 +32,7 @@ int main() {
 
 // HORIZONTALLY CONCATENATE
     // store first picture into vec
-    std::cout << "Input first picture: " << std::endl;
-    std::string s;
+    std::cout << std::endl << "Input first picture: " << std::endl;
     Vec<std::string> firstPicture;
     while(getline(std::cin, s))
         firstPicture.push_back(s);
@@ -41,15 +41,15 @@ int main() {
     std::cin.clear();
 
     // store second picture into vector
-    std::cout << "Input second picture: " << std::endl;
+    std::cout << std::endl << "Input second picture: " << std::endl;
     Vec<std::string> secondPicture;
     while(getline(std::cin, s))
         secondPicture.push_back(s);
+    
+    std::cout << std::endl;
 
-    std::cout<<"done with inputs"<<std::endl;
     // horizontally concatenate two pictures
     Vec<std::string> finalPicture = hcat(firstPicture, secondPicture);
-    std::cout<<"done with horizontal concact"<<std::endl;
     for (vec_size i = 0; i != finalPicture.size(); ++i){
         std::cout << finalPicture[i] << std::endl;
     }
