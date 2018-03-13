@@ -4,7 +4,10 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> hcat(const std::vector<std::string>&, const std::vector<std::string>&);
+#include "hcat.cpp"
+
+template <class T>
+T hcat(const T&, const T&);
 
 #endif // GUARD_hcat_h
 

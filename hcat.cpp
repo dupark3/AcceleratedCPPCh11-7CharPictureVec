@@ -2,16 +2,16 @@
 #include <string>
 #include <vector>
 
-#include "hcat.h"
 #include "width.h"
 
 
 template <class T>
 T hcat(const T& firstPic, const T& secondPic){
-    T ret;
 
     typedef std::string::size_type string_size;
     typedef typename T::size_type vec_size;
+
+    T ret;
 
     string_size maxLen = width(firstPic);
     vec_size i = 0;
